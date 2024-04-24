@@ -17,9 +17,12 @@ mongoose.connect(MONGO_URI, {
         console.error('Error connecting to MongoDB:', error);
     });
 
+
+
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 18; i++) {
+
         const camp = new Campground({
             location: `${cities[i].city}, ${cities[i].state}`,
             title: `${descriptors[i]} ${places[i]}`

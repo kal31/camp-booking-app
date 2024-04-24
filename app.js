@@ -13,10 +13,9 @@ app.get('/', (req,res) => {
     res.render('home');
 });
 
-app.get('/campName', async (req,res) => {
-    const title = new Campground({title: 'Manchester'});
-    await title.save();
-    res.send(title);
+app.get('/campGrounds', async (req,res) => {
+    const campGrounds = await Campground.find({});
+    res.render('index', {campGrounds})
 });
 
 
